@@ -1,0 +1,18 @@
+# Videos: van en YouTube (no listado) o Drive, no en el repositorio
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+
+# Proyectos y compilaciones de Unity
+Library/
+Temp/
+Build/
+Builds/
+*.apk
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
