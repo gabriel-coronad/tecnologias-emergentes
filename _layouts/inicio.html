@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div class="contenido">
+{{ content }}
+</div>
+
+{% if page.tarjetas %}
+<section class="service">
+  <h3 class="h3 service-title">{{ page.titulo_tarjetas }}</h3>
+  <ul class="service-list">
+    {% for t in page.tarjetas %}
+    <li>
+      <a class="service-item" href="{{ t.enlace | relative_url }}">
+        <div class="service-icon-box">{% include icono.html nombre=t.icono %}</div>
+        <div class="service-content-box">
+          <h4 class="service-item-title">{{ t.titulo }}</h4>
+          <p class="service-item-text">{{ t.texto }}</p>
+          <span class="service-link">Ver →</span>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

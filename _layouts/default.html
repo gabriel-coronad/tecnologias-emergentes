@@ -9,10 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/estilo.css' | relative_url }}">
+  <script>
+    // Recordar si la tarjeta lateral se dejó contraída
+    try { if (localStorage.getItem("tarjeta-contraida") === "1") document.documentElement.classList.add("contraida"); } catch (e) {}
+  </script>
 </head>
 <body>
   <main>
     <aside class="sidebar" data-sidebar>
+      <button class="colapsar-btn" data-colapsar aria-label="Contraer o expandir la tarjeta" title="Contraer / expandir">
+        {% include icono.html nombre="contraer" %}
+      </button>
       <div class="sidebar-info">
         <div class="info-content">
           <h1 class="name">{{ site.tarjeta.nombre }}</h1>
@@ -29,7 +36,7 @@
         <ul class="contacts-list">
           {% for dato in site.tarjeta.datos %}
           <li class="contact-item">
-            <div class="icon-box">{% include icono.html nombre=dato.icono %}</div>
+            <div class="icon-box" title="{{ dato.titulo }}">{% include icono.html nombre=dato.icono %}</div>
             <div class="contact-info">
               <p class="contact-title">{{ dato.titulo }}</p>
               <p class="contact-text">{{ dato.valor }}</p>
@@ -64,6 +71,12 @@
     // En celular la tarjeta lateral se abre y se cierra con el botón "Ver datos"
     document.querySelector("[data-sidebar-btn]").addEventListener("click", function () {
       document.querySelector("[data-sidebar]").classList.toggle("active");
+    });
+
+    // En computadora la tarjeta lateral se contrae a una franja de íconos
+    document.querySelector("[data-colapsar]").addEventListener("click", function () {
+      var contraida = document.documentElement.classList.toggle("contraida");
+      try { localStorage.setItem("tarjeta-contraida", contraida ? "1" : "0"); } catch (e) {}
     });
   </script>
 </body>
