@@ -929,7 +929,8 @@ main {
     justify-content: center;
     position: absolute;
     top: 14px;
-    right: 14px;
+    right: 50%;
+    transform: translateX(50%);
     width: 30px;
     height: 30px;
     border-radius: 8px;
@@ -949,8 +950,6 @@ main {
     width: 72px;
     padding: 55px 16px 20px;
   }
-
-  .contraida .colapsar-btn { right: 50%; transform: translateX(50%); }
 
   .contraida .colapsar-btn svg { transform: rotate(180deg); }
 
