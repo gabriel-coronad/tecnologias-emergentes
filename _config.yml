@@ -1,0 +1,34 @@
+# Configuración del portafolio (Jekyll + tema Minimal Mistakes)
+# Después de cambiar este archivo, GitHub tarda 1-2 minutos en actualizar la página.
+
+title: "Tecnologías Emergentes"
+description: "Portafolio de prácticas y proyecto final · Otoño 2026"
+url: "https://gabriel-coronad.github.io"
+baseurl: "/tecnologias-emergentes"
+locale: "es-MX"
+
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+# Combinaciones de colores: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
+minimal_mistakes_skin: "dark"
+search: true
+
+author:
+  name: "Gabriel Adad Coronado Placeres"
+  bio: "Ing. en Tecnologías de Cómputo y Telecomunicaciones · Universidad Iberoamericana"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+
+# Todas las páginas: menú lateral y perfil
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: true
+      sidebar:
+        nav: "menu"
+
+exclude:
+  - README.md

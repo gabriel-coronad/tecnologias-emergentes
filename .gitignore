@@ -16,3 +16,7 @@ Builds/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Jekyll
+_site/
+.jekyll-cache/
