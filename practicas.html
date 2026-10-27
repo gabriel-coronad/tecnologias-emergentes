@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Prácticas"
+permalink: /practicas/
+menu_activo: practicas
+---
+{%- comment -%}
+  Esta página se arma sola: muestra cada práctica que exista en practicas/<nombre>/index.md,
+  ordenada por el campo "orden" de cada una. No hay que editarla.
+{%- endcomment -%}
+{%- assign practicas = site.pages | where_exp: "p", "p.url contains '/practicas/'" | where_exp: "p", "p.url != '/practicas/'" | sort: "orden" -%}
+
+<p class="about-text">Reportes de las prácticas de la materia.</p>
+
+<ul class="project-list">
+  {% for p in practicas %}
+  <li class="project-item">
+    <a href="{{ p.url | relative_url }}">
+      <figure class="project-img">
+        <div class="project-item-icon-box">{% include icono.html nombre="ver" %}</div>
+        {% if p.portada %}
+        <img src="{{ p.url | relative_url }}{{ p.portada }}" alt="{{ p.title }}" loading="lazy">
+        {% else %}
+        <div class="project-img-vacia">{{ p.title }}</div>
+        {% endif %}
+      </figure>
+      <h3 class="project-title">{{ p.title }}</h3>
+      {% if p.clase %}<p class="project-category">{{ p.clase }}</p>{% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>

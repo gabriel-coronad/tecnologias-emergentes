@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != "/" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/estilo.css' | relative_url }}">
+</head>
+<body>
+  <main>
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <div class="info-content">
+          <h1 class="name">{{ site.tarjeta.nombre }}</h1>
+          <p class="title">{{ site.tarjeta.etiqueta }}</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn aria-label="Mostrar datos">
+          <span>Ver datos</span>
+          {% include icono.html nombre="mas" %}
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+        <ul class="contacts-list">
+          {% for dato in site.tarjeta.datos %}
+          <li class="contact-item">
+            <div class="icon-box">{% include icono.html nombre=dato.icono %}</div>
+            <div class="contact-info">
+              <p class="contact-title">{{ dato.titulo }}</p>
+              <p class="contact-text">{{ dato.valor }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <nav class="navbar">
+        <ul class="navbar-list">
+          {% for item in site.menu %}
+          <li class="navbar-item">
+            <a href="{{ item.url | relative_url }}" class="navbar-link{% if page.menu_activo == item.id %} active{% endif %}">{{ item.titulo }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <article>
+        <header>
+          <h2 class="h2 article-title">{{ page.title }}</h2>
+        </header>
+        {{ content }}
+      </article>
+    </div>
+  </main>
+
+  <script>
+    // En celular la tarjeta lateral se abre y se cierra con el botón "Ver datos"
+    document.querySelector("[data-sidebar-btn]").addEventListener("click", function () {
+      document.querySelector("[data-sidebar]").classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
+<!-- Diseño basado en vCard de codewithsadee (licencia MIT): https://github.com/codewithsadee/vcard-personal-portfolio -->

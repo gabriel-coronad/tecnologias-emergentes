@@ -1,34 +1,50 @@
-# Configuración del portafolio (Jekyll + tema Minimal Mistakes)
+# Configuración del portafolio (Jekyll). Aquí se edita la tarjeta lateral.
 # Después de cambiar este archivo, GitHub tarda 1-2 minutos en actualizar la página.
 
 title: "Tecnologías Emergentes"
 description: "Portafolio de prácticas y proyecto final · Otoño 2026"
 url: "https://gabriel-coronad.github.io"
 baseurl: "/tecnologias-emergentes"
-locale: "es-MX"
+lang: "es"
 
-remote_theme: "mmistakes/minimal-mistakes@4.26.2"
-# Combinaciones de colores: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
-minimal_mistakes_skin: "dark"
-search: true
+# Tarjeta lateral
+tarjeta:
+  nombre: "Gabriel Adad Coronado Placeres"
+  etiqueta: "Tecnologías Emergentes"
+  datos:
+    - titulo: "Carrera"
+      valor: "Ing. en Tecnologías de Cómputo y Telecomunicaciones"
+      icono: "carrera"
+    - titulo: "Universidad"
+      valor: "Universidad Iberoamericana"
+      icono: "universidad"
+    - titulo: "Materia"
+      valor: "Tecnologías Emergentes · Otoño 2026"
+      icono: "materia"
+    - titulo: "Profesores"
+      valor: "Mtro. Joel Arango Ramírez<br>Mtro. Christopher Rodríguez Avitúa"
+      icono: "profesores"
 
-author:
-  name: "Gabriel Adad Coronado Placeres"
-  bio: "Ing. en Tecnologías de Cómputo y Telecomunicaciones · Universidad Iberoamericana"
+# Menú de arriba
+menu:
+  - titulo: "Inicio"
+    url: /
+    id: inicio
+  - titulo: "Prácticas"
+    url: /practicas/
+    id: practicas
+  - titulo: "Proyecto final"
+    url: /proyecto-final/
+    id: proyecto
 
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-
-# Todas las páginas: menú lateral y perfil
+# Cada práctica (carpeta dentro de practicas/) usa el diseño de reporte
 defaults:
   - scope:
-      path: ""
+      path: "practicas"
     values:
-      layout: single
-      author_profile: true
-      sidebar:
-        nav: "menu"
+      layout: practica
+      menu_activo: practicas
 
 exclude:
   - README.md
+  - LICENCIA-vCard.txt

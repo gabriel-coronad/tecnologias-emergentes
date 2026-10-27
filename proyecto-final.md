@@ -1,9 +1,11 @@
 ---
-title: "Visualización espacial de redes inalámbricas con realidad mixta"
+layout: pagina
+title: "Proyecto final"
 permalink: /proyecto-final/
+menu_activo: proyecto
 ---
 
-**Proyecto final** · Meta Quest 3 · Unity
+**Visualización espacial de redes inalámbricas con realidad mixta** · Meta Quest 3 · Unity
 
 ## Descripción
 

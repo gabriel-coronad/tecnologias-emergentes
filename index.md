@@ -1,15 +1,16 @@
 ---
+layout: pagina
 title: "Tecnologías Emergentes"
 permalink: /
+menu_activo: inicio
 ---
 
-**Gabriel Adad Coronado Placeres**
-Ingeniería en Tecnologías de Cómputo y Telecomunicaciones · Universidad Iberoamericana · Otoño 2026
+Portafolio de la materia **Tecnologías Emergentes** (Otoño 2026). Aquí se encuentran los reportes de las prácticas realizadas en Unity y la información del proyecto final de realidad mixta.
 
-**Profesores:** Mtro. Joel Arango Ramírez · Mtro. Christopher Rodríguez Avitúa
+## Prácticas
 
-Portafolio de la materia con los reportes de las prácticas y el proyecto final. Usa el menú lateral para ver cada sección.
+Cada práctica tiene su reporte con lo que pide la práctica, el desarrollo, capturas y lo observado. [Ver prácticas](practicas/)
 
 ## Proyecto final
 
-[Visualización espacial de redes inalámbricas con realidad mixta](proyecto-final/): aplicación de realidad mixta para Meta Quest 3 desarrollada en Unity.
+**Visualización espacial de redes inalámbricas con realidad mixta**: aplicación de realidad mixta para Meta Quest 3 desarrollada en Unity. [Ver proyecto final](proyecto-final/)

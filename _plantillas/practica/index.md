@@ -1,5 +1,8 @@
 ---
 title: "Práctica N · Título de la práctica"
+clase: "Clase N · Tema de la presentación"
+orden: 1
+portada: capturas/01.png
 ---
 
 <!--
@@ -7,11 +10,10 @@ title: "Práctica N · Título de la práctica"
   Para una práctica nueva:
     1. Copia esta carpeta "practica" dentro de "practicas/" y renómbrala (por ejemplo practicas/practica-1/).
     2. Pon las capturas en una carpeta capturas/ dentro de esa práctica.
-    3. Llena las secciones. Borra "Evidencia solicitada" y "Scripts de C#" si no aplican.
-    4. Agrega la práctica al menú en _data/navigation.yml.
+    3. Arriba: título, clase, orden (posición en la lista de prácticas) y portada (la captura que se ve en la tarjeta).
+    4. Llena las secciones. Borra "Evidencia solicitada" y "Scripts de C#" si no aplican.
+  La práctica aparece sola en la página de Prácticas; no hay que agregarla a ningún menú.
 -->
-
-**Clase:** tema de la presentación
 
 ## Qué pide la práctica
 
