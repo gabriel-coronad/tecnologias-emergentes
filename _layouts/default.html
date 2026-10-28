@@ -62,9 +62,18 @@
         <header>
           <h2 class="h2 article-title">{{ page.title }}</h2>
         </header>
+        <details class="indice-movil" data-indice-movil hidden>
+          <summary>Índice</summary>
+          <ol class="indice-lista"></ol>
+        </details>
         {{ content }}
       </article>
     </div>
+
+    <aside class="indice" data-indice hidden>
+      <p class="indice-titulo">En esta página</p>
+      <ol class="indice-lista"></ol>
+    </aside>
   </main>
 
   <script>
@@ -78,6 +87,50 @@
       var contraida = document.documentElement.classList.toggle("contraida");
       try { localStorage.setItem("tarjeta-contraida", contraida ? "1" : "0"); } catch (e) {}
     });
+
+    // Índice: se arma solo con los títulos ## y ### del reporte.
+    // En computadora va en la columna derecha; en celular, desplegable arriba del reporte.
+    (function () {
+      var titulos = document.querySelectorAll(".contenido h2, .contenido h3");
+      if (titulos.length < 2) return;
+
+      var enlaces = [];
+      document.querySelectorAll(".indice-lista").forEach(function (lista) {
+        titulos.forEach(function (t, i) {
+          if (!t.id) t.id = "seccion-" + (i + 1);
+          var li = document.createElement("li");
+          li.className = "indice-" + t.tagName.toLowerCase();
+          var a = document.createElement("a");
+          a.href = "#" + t.id;
+          a.textContent = t.textContent;
+          li.appendChild(a);
+          lista.appendChild(li);
+          enlaces.push({ titulo: t, enlace: a });
+        });
+      });
+
+      // El desplegable va justo antes del reporte (después de la línea de la clase)
+      var movil = document.querySelector("[data-indice-movil]");
+      var contenido = document.querySelector(".contenido");
+      contenido.parentNode.insertBefore(movil, contenido);
+      document.querySelector("[data-indice]").hidden = false;
+      movil.hidden = false;
+
+      // En celular el índice se cierra al elegir una sección
+      movil.addEventListener("click", function (e) {
+        if (e.target.tagName === "A") movil.open = false;
+      });
+
+      // Resaltar la sección que se está leyendo
+      function marcar() {
+        var actual = titulos[0];
+        titulos.forEach(function (t) { if (t.getBoundingClientRect().top < 120) actual = t; });
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) actual = titulos[titulos.length - 1];
+        enlaces.forEach(function (e) { e.enlace.classList.toggle("activo", e.titulo === actual); });
+      }
+      window.addEventListener("scroll", marcar, { passive: true });
+      marcar();
+    })();
   </script>
 </body>
 </html>
