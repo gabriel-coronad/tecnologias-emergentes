@@ -5,79 +5,47 @@ orden: 1
 portada: capturas/03-parque-decorado.png
 ---
 
-## Qué pide la práctica
-
-> **Game Object.** Crea un nuevo proyecto 3D Core llamado "Practica_1_RM". Crea una carpeta llamada "Scene" y una escena nueva llamada "objetos". Identifica y crea todas las figuras geométricas que observas en "3D object" y modifica su componente Transform.
-
-> **Parque de diversiones.** Crea una nueva escena en la carpeta "Scene" con el nombre Parque_diversiones. Crea un parque de diversiones donde priorices jerarquías, ya que en el siguiente paso tendrá movimiento y crearás una interacción completa.
-
-> **Paso 6.** Proponer ejemplo de proyecto final: GameObject, Jerarquía, Prefab. Documentar lo observado y comprendido.
-
-*Fuente: presentación «Unity» (clase 1), diapositivas 9 a 11.*
-
 ## Desarrollo
 
-### Escena «objetos»
+### Figuras geométricas
 
-Proyecto **3D (Built-In Render Pipeline)** llamado `Practica_1_RM` en Unity 2022.3.58f1, con la carpeta `Scene`. En la escena `objetos` creé las seis figuras de *GameObject → 3D Object* (**Cube, Sphere, Capsule, Cylinder, Plane y Quad**) y les cambié su **Transform** para acomodarlas en fila sobre el plano:
+Creé un proyecto nuevo en Unity llamado *Practica_1_RM* y, dentro de la carpeta *Scene*, la escena *objetos*. En ella agregué las figuras geométricas que ofrece Unity (cubo, esfera, cápsula, cilindro, plano y quad) y modifiqué su Transform para acomodarlas en fila: a todas les cambié la posición, a algunas las giré, como al cubo y a la cápsula, y a otras les cambié el tamaño, como a la esfera y al quad.
 
-| Figura | Position | Rotation | Scale |
-|---|---|---|---|
-| Plane | 0, 0, 0 | 0, 0, 0 | 1.5, 1, 1 |
-| Cube | -5, 0.5, 0 | 0, 45, 0 | 1.5, 1, 1 |
-| Sphere | -2.5, 0.75, 0 | 0, 0, 0 | 1.5, 1.5, 1.5 |
-| Capsule | 0, 1, 0 | 0, 0, 30 | 1, 1, 1 |
-| Cylinder | 2.5, 1, 0 | 0, 0, 0 | 1, 1, 1 |
-| Quad | 5, 1, 0 | 0, 0, 15 | 1.5, 1.5, 1 |
+### Parque de diversiones
 
-### Escena «Parque_diversiones»
+Para el parque creé la escena *Parque_diversiones* y usé un paquete gratuito de la Asset Store, *Low Poly Houses Free Pack*, que incluye una rueda de la fortuna y objetos para decorar.
 
-Usé el paquete gratuito **Low Poly Houses Free Pack** de la Asset Store, que incluye una rueda de la fortuna y elementos de decoración.
+La rueda la organicé pensando en que en la siguiente práctica tendrá movimiento. Agrupé el aro y las diez cabinas dentro de un objeto vacío colocado en el centro de la rueda; así, al girar ese objeto, girará todo junto mientras la base se queda fija.
 
-- **Rueda de la fortuna:** armé su jerarquía pensando en el movimiento de la siguiente práctica. Un objeto vacío `CentroGiro`, colocado en el centro del aro, contiene el aro y las 10 cabinas; al girarlo, girará todo junto.
-- **Escala:** metí la rueda y la decoración en un padre `Parque` con escala 0.3, para que todo quedara proporcionado.
-- **Decoración:** terreno de pasto, fuente, bancas, faroles, basureros y arbustos, todos **prefabs** del paquete, organizados en grupos dentro de `Decoracion`.
-
-```
-Parque                  (escala 0.3)
-├── RuedaFortuna
-│   └── ferris wheel    (base)
-│       └── CentroGiro  (centro de giro)
-│           ├── rotation wheel (aro)
-│           └── cabin 1 … cabin 10
-└── Decoracion
-    ├── Camino → land
-    └── Parquecito → Fuente, Bancas, Faroles, Basureros, Cercas
-```
-
-**Problema encontrado:** al crear el proyecto, Unity mostró `DirectoryNotFoundException` en un archivo de `Library\PackageCache`. La ruta medía 260 caracteres y Unity solo acepta hasta 259. Lo resolví moviendo el proyecto a una ruta corta.
+Después decoré el parque con pasto, una fuente, bancas, faroles, botes de basura y arbustos, y los agrupé por tipo para mantener la escena ordenada. Para que todo quedara del mismo tamaño que la rueda, coloqué todos los elementos dentro de un objeto padre llamado *Parque* y lo reduje: al cambiar la escala del padre, todo lo que contiene se ajustó al mismo tiempo.
 
 ## Capturas
 
 ![Escena objetos](capturas/01-objetos.png)
-*Escena «objetos»: las seis figuras y el Transform del Cube.*
+*Escena «objetos» con las seis figuras geométricas.*
 
 ![Rueda de la fortuna y su jerarquía](capturas/02-rueda-jerarquia.png)
-*Rueda de la fortuna con su jerarquía desplegada.*
+*Rueda de la fortuna y su jerarquía.*
 
 ![Parque decorado](capturas/03-parque-decorado.png)
-*Parque decorado y la jerarquía de la decoración.*
+*Parque de diversiones decorado.*
+
+## Video
 
 ## Propuesta de proyecto final
 
-*Propuesta preliminar: puede cambiar durante el desarrollo del proyecto.*
+Mi proyecto final es una aplicación de realidad mixta para Meta Quest 3 que muestra una red inalámbrica sobre el espacio real: el router, los dispositivos conectados y la intensidad de la señal en distintos puntos de una habitación. Así se podrían aplicar los conceptos de esta práctica:
 
-**Visualización espacial de redes inalámbricas con realidad mixta** (Meta Quest 3).
+- **GameObjects:** el router, cada dispositivo (laptop, celular, televisión) y cada punto donde se mide la señal.
+- **Jerarquía:** un objeto *Red* que contenga al router, a los dispositivos y a las mediciones. Cada dispositivo tendría como hijos su línea de conexión y una etiqueta con su latencia. Así, para acomodar la red en la habitación bastaría con mover el objeto *Red*.
+- **Prefabs:** uno para los dispositivos y otro para los puntos de medición, por ejemplo una esfera que cambia de color según la intensidad de la señal. Cada dispositivo o medición sería una copia del prefab, y al modificar el original cambiarían todas.
 
-- **GameObjects:** el router, cada dispositivo (laptop, celular, TV) y cada punto donde se mide la señal.
-- **Jerarquía:** un objeto `Red` que contiene al `Router`, un grupo `Dispositivos` (cada uno con su línea de conexión y su etiqueta de latencia) y un grupo `Mediciones`. Al reubicar la red en la habitación, basta con mover `Red`.
-- **Prefabs:** `Dispositivo` (modelo, línea de conexión y etiqueta), con una instancia por dispositivo, y `PuntoMedicion` (esfera que cambia de color según la intensidad de la señal), con una instancia por lugar medido.
+Es una propuesta inicial que puede cambiar durante el desarrollo del proyecto.
 
 ## Lo que observé y aprendí
 
-- **Transform** define dónde está un objeto (Position), cuánto está girado (Rotation) y qué tan grande es (Scale). Todo GameObject lo tiene.
-- Para apoyar una figura en el piso, su posición Y debe ser la mitad de su altura.
-- El **Quad** solo se ve por un lado: de espaldas a la cámara desaparece.
-- En una **jerarquía**, lo que le pasa al padre les pasa a los hijos: si se mueve, rota o escala, los hijos lo siguen. Las posiciones de los hijos son **locales**, medidas desde su padre.
-- **Las escalas se multiplican** a lo largo de la jerarquía. Por eso un solo padre con escala 0.3 deja todo el parque proporcionado.
-- Un **prefab** es un objeto reutilizable: todas sus copias en la escena salen del mismo original. Para reorganizar los hijos de un prefab hay que desempacarlo (*Unpack*), y entonces pierde el enlace con el original.
+Todo objeto en Unity tiene un Transform, que define su posición, su rotación y su tamaño. Para que una figura quede apoyada sobre el piso, su posición en Y debe ser la mitad de su altura, y algunas figuras, como el quad, solo se ven por un lado.
+
+Lo que más me sirvió fue entender las jerarquías: lo que le pasa a un objeto padre les pasa también a sus hijos. Si el padre se mueve, gira o cambia de tamaño, los hijos lo siguen; por eso pude ajustar todo el parque cambiando solo un objeto, y por eso la rueda podrá girar completa desde su centro.
+
+También entendí la utilidad de los prefabs: son objetos que se pueden reutilizar muchas veces, y todas las copias dependen del original. Las bancas, faroles y arbustos del parque son copias de un mismo prefab.

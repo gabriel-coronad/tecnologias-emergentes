@@ -424,9 +424,13 @@ main {
   display: block;
   max-width: 100%;
   height: auto;
+  margin: 0 auto 8px;
   border-radius: 16px;
   border: 1px solid var(--jet);
 }
+
+/* Imagen con su leyenda debajo, centrada */
+.contenido p:has(> img) { text-align: center; }
 
 .contenido img + em,
 .contenido em { color: var(--light-gray-70); font-size: var(--fs-7); }
@@ -835,6 +839,9 @@ main {
   }
 
   .navbar-link { font-weight: var(--fw-500); }
+
+  /* El título empieza debajo del menú, para que no lo tape */
+  article > header { padding-top: 45px; }
 
   .project-list { grid-template-columns: repeat(3, 1fr); }
 

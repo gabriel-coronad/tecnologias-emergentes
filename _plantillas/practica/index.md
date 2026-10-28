@@ -6,43 +6,27 @@ portada: capturas/01.png
 ---
 
 <!--
-  PLANTILLA DE REPORTE DE PRÁCTICA (no se publica: Jekyll ignora las carpetas que empiezan con _).
+  PLANTILLA DE PÁGINA DE PRÁCTICA (no se publica: Jekyll ignora las carpetas que empiezan con _).
+  Es la evidencia para el profesor: redactar en primera persona y en lenguaje natural, sin repetir lo que
+  pide la práctica ni detalles técnicos de más (esos van en la BITACORA.md de la práctica).
   Para una práctica nueva:
-    1. Copia esta carpeta "practica" dentro de "practicas/" y renómbrala (por ejemplo practicas/practica-1/).
+    1. Copia esta carpeta "practica" dentro de "practicas/" y renómbrala (por ejemplo practicas/practica-3/).
     2. Pon las capturas en una carpeta capturas/ dentro de esa práctica.
-    3. Arriba: título, clase, orden (posición en la lista de prácticas) y portada (la captura que se ve en la tarjeta).
-    4. Llena las secciones. Borra "Evidencia solicitada" y "Scripts de C#" si no aplican.
+    3. Arriba: título, clase, orden (posición en la lista de prácticas) y portada (la captura de la tarjeta).
+    4. Llena las secciones. "Video" siempre va, aunque todavía no tenga video.
+       Agrega las secciones que pida la práctica (por ejemplo, "Lo que observé y aprendí" o "Scripts de C#").
   La práctica aparece sola en la página de Prácticas; no hay que agregarla a ningún menú.
 -->
 
-## Qué pide la práctica
-
-> Texto de la práctica tal como viene en la presentación.
-
-*Fuente: presentación «Nombre», diapositiva N.*
-
 ## Desarrollo
 
-Qué hice, paso a paso.
+Qué hice, en primera persona.
 
 ## Capturas
 
 ![Descripción de la captura](capturas/01.png)
 *Qué se ve en la captura.*
 
-## Evidencia solicitada
+## Video
 
-<!-- Solo si la práctica pide una evidencia concreta. Video: enlace de YouTube (no listado). -->
-[Ver video de la práctica](https://youtu.be/ID_DEL_VIDEO)
-
-## Scripts de C#
-
-### NombreDelScript.cs
-
-```csharp
-// código
-```
-
-## Lo que observé y aprendí
-
-Explicación breve.
+<!-- Cuando exista: [Ver video](https://youtu.be/ID_DEL_VIDEO) -->
