@@ -30,17 +30,13 @@ Después decoré el parque con pasto, una fuente, bancas, faroles, botes de basu
 
 ## Propuesta de proyecto final
 
-Mi proyecto final se llama *Visualización espacial de redes inalámbricas con realidad mixta*. Es una aplicación para el visor Meta Quest 3 en la que el usuario ve su habitación real a través del visor y, sobre ella, una representación virtual de su red Wi-Fi: el router, los dispositivos conectados (como una computadora o un celular) y las conexiones entre ellos. La aplicación también mostrará datos de la red, como la latencia o la intensidad de la señal.
+Mi proyecto final es una aplicación de realidad mixta para el visor Meta Quest 3 que permitirá visualizar una red inalámbrica dentro de un espacio físico. A través del visor, el usuario verá su habitación real y, sobre ella, una representación virtual de su red Wi-Fi: el router, los dispositivos conectados, como una computadora o un celular, y las conexiones entre ellos. La aplicación también mostrará datos de la red, como la latencia o la intensidad de la señal.
 
-Además, el usuario podrá recorrer la habitación y medir la señal en distintos lugares. En cada lugar donde mida quedará una marca de color que indica qué tan buena es la señal ahí, y con todas las marcas se formará un mapa de la cobertura de la red.
+Además, el usuario podrá recorrer la habitación y medir la señal en distintos lugares. En cada punto donde mida quedará una marca cuyo color indicará qué tan buena es la señal en ese lugar, y con el conjunto de marcas se formará un mapa de la cobertura de la red.
 
-Así usaría los conceptos de esta práctica:
+Los elementos que aparecerán en la escena serán: el router, cada dispositivo, las líneas de conexión y cada marca de medición. Estos elementos se organizarán dentro de un objeto padre que contendrá al router y a los dispositivos, de modo que al moverlo se acomode toda la red en la habitación; a su vez, cada dispositivo tendrá como hijo una etiqueta con sus datos, que se moverá junto con él. Finalmente, los dispositivos y las marcas de medición se crearán a partir de prefabs: cada dispositivo será una copia del mismo modelo, y cada vez que el usuario mida la señal se generará una nueva marca, por ejemplo una esfera, que cambiará de color según la intensidad de la señal.
 
-- **GameObjects:** cada elemento que aparece en la escena: el router, cada dispositivo, las líneas de conexión y cada marca de medición.
-- **Jerarquía:** un objeto padre *Red* que contenga al router y a los dispositivos, de modo que al moverlo se acomode toda la red en la habitación. Cada dispositivo tendría como hijo una etiqueta con sus datos, que se movería junto con él.
-- **Prefabs:** un prefab de dispositivo, para crear cada dispositivo de la red a partir del mismo original, y un prefab de marca de medición, por ejemplo una esfera, que se crearía cada vez que el usuario mide la señal y cambiaría de color según qué tan fuerte sea.
-
-Es una propuesta inicial que puede cambiar durante el desarrollo.
+Esta propuesta es inicial y puede cambiar durante el desarrollo del proyecto.
 
 ## Lo que observé y aprendí
 

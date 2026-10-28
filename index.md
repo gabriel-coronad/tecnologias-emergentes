@@ -12,7 +12,7 @@ tarjetas:
     enlace: /practicas/
     icono: practicas
   - titulo: "Proyecto final"
-    texto: "Visualización espacial de redes inalámbricas con realidad mixta: aplicación para Meta Quest 3 desarrollada en Unity."
+    texto: "Aplicación de realidad mixta para Meta Quest 3, desarrollada en Unity, que permitirá visualizar una red inalámbrica dentro de un espacio físico."
     enlace: /proyecto-final/
     icono: proyecto
 ---

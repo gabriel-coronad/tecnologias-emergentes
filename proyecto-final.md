@@ -5,7 +5,7 @@ permalink: /proyecto-final/
 menu_activo: proyecto
 ---
 
-**Visualización espacial de redes inalámbricas con realidad mixta** · Meta Quest 3 · Unity
+Aplicación de realidad mixta para visualizar redes inalámbricas · Meta Quest 3 · Unity
 
 ## Descripción
 
