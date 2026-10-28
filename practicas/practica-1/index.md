@@ -34,7 +34,11 @@ Mi proyecto final es una aplicación de realidad mixta para el visor Meta Quest 
 
 Además, el usuario podrá recorrer la habitación y medir la señal en distintos lugares. En cada punto donde mida quedará una marca cuyo color indicará qué tan buena es la señal en ese lugar, y con el conjunto de marcas se formará un mapa de la cobertura de la red.
 
-Los elementos que aparecerán en la escena serán: el router, cada dispositivo, las líneas de conexión y cada marca de medición. Estos elementos se organizarán dentro de un objeto padre que contendrá al router y a los dispositivos, de modo que al moverlo se acomode toda la red en la habitación; a su vez, cada dispositivo tendrá como hijo una etiqueta con sus datos, que se moverá junto con él. Finalmente, los dispositivos y las marcas de medición se crearán a partir de prefabs: cada dispositivo será una copia del mismo modelo, y cada vez que el usuario mida la señal se generará una nueva marca, por ejemplo una esfera, que cambiará de color según la intensidad de la señal.
+Los conceptos de esta práctica se aplicarían de la siguiente manera:
+
+- **GameObject:** los elementos que aparecerán en la escena serán el router, cada dispositivo, las líneas de conexión y cada marca de medición.
+- **Jerarquía:** los elementos se organizarán dentro de un objeto padre que contendrá al router y a los dispositivos, de modo que al moverlo se acomode toda la red en la habitación. A su vez, cada dispositivo tendrá como hijo una etiqueta con sus datos, que se moverá junto con él.
+- **Prefab:** los dispositivos y las marcas de medición se crearán a partir de prefabs. Cada dispositivo será una copia del mismo modelo, y cada vez que el usuario mida la señal se generará una nueva marca, por ejemplo una esfera, que cambiará de color según la intensidad de la señal.
 
 Esta propuesta es inicial y puede cambiar durante el desarrollo del proyecto.
 
