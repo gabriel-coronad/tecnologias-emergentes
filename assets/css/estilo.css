@@ -435,6 +435,16 @@ main {
 .contenido img + em,
 .contenido em { color: var(--light-gray-70); font-size: var(--fs-7); }
 
+/* Video de YouTube incrustado, del ancho del contenido */
+.contenido iframe.video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 1px solid var(--jet);
+  border-radius: 16px;
+}
+
 .contenido table {
   width: 100%;
   border-collapse: collapse;
