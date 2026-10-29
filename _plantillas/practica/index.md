@@ -1,6 +1,6 @@
 ---
 title: "Práctica N · Título de la práctica"
-clase: "Clase N · Tema de la presentación"
+presentacion: "Nombre de la presentación"
 orden: 1
 portada: capturas/01.png
 ---
@@ -19,7 +19,9 @@ portada: capturas/01.png
   Para una práctica nueva:
     1. Copia esta carpeta "practica" dentro de "practicas/" y renómbrala (por ejemplo practicas/practica-3/).
     2. Pon las capturas en una carpeta capturas/ dentro de esa práctica.
-    3. Arriba: título, clase, orden (posición en la lista de prácticas) y portada (la captura de la tarjeta).
+    3. Arriba: título, presentacion, orden (posición en la lista de prácticas) y portada (la captura de la tarjeta).
+       "presentacion" es el nombre del archivo de la presentación con las especificaciones de la práctica, sin el
+       número inicial (ese número lo puso el usuario) y sin ".pptx". Si la práctica no tiene presentación, se borra esa línea.
   La práctica aparece sola en la página de Prácticas; no hay que agregarla a ningún menú.
 -->
 

@@ -1,6 +1,6 @@
 ---
 title: "Práctica 1 · GameObject y parque de diversiones"
-clase: "Clase 1 · Fundamentos y estructura de Unity"
+presentacion: "Unity_o2026"
 orden: 1
 portada: capturas/03-parque-decorado.png
 ---
